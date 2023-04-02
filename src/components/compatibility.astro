@@ -4,86 +4,72 @@ import ContentSection from "~/components/content-section.astro";
 import type { CompatibilityItem } from "~/types";
 
 const frameworks: Array<CompatibilityItem> = [
+
+  {
+    title: "HTML",
+    icon: "frameworks/html",
+    url: "https://developer.mozilla.org/fr/docs/Web/HTML",
+  },
+  {
+    title: "CSS",
+    icon: "frameworks/css",
+    url: "https://developer.mozilla.org/fr/docs/Web/CSS",
+  },
+  {
+    title: "Javascript",
+    icon: "frameworks/javascript",
+    url: "https://developer.mozilla.org/fr/docs/Web/JavaScript",
+  },
   {
     title: "React",
     icon: "frameworks/react",
     url: "https://reactjs.org/",
   },
+
   {
-    title: "Preact",
-    icon: "frameworks/preact",
-    url: "https://preactjs.com/",
+    title: "Node",
+    icon: "frameworks/node",
+    url: "https://nodejs.dev/fr/learn/",
   },
   {
-    title: "Svelte",
-    icon: "frameworks/svelte",
-    url: "https://svelte.dev/",
+    title: "Express",
+    icon: "frameworks/express",
+    url: "https://expressjs.com/fr/",
   },
   {
-    title: "Vue",
-    icon: "frameworks/vue",
-    url: "https://vuejs.org/",
-  },
-  {
-    title: "Solid",
-    icon: "frameworks/solid",
-    url: "https://www.solidjs.com/",
-  },
-  {
-    title: "Lit",
-    icon: "frameworks/lit",
-    url: "https://lit.dev/",
+    title: "Symfony",
+    icon: "frameworks/symfony",
+    url: "https://symfony.com/what-is-symfony",
   },
 ];
 
 const platforms: Array<CompatibilityItem> = [
   {
-    title: "Netlify",
-    icon: "platforms/netlify",
-    url: "https://www.netlify.com/",
-  },
-  {
-    title: "Vercel",
-    icon: "platforms/vercel",
-    url: "https://vercel.com/",
-  },
-  {
-    title: "Cloudflare",
-    icon: "fa-brands:cloudflare",
-    url: "https://pages.cloudflare.com/",
-  },
-  {
-    title: "Render",
-    icon: "platforms/render",
-    url: "https://render.com/",
+    title: "Figma",
+    icon: "platforms/figma",
+    url: "https://www.blogdumoderateur.com/tools/figma/",
   },
   {
     title: "GitHub",
     icon: "fa-brands:github",
-    url: "https://pages.github.com/",
+    url: "https://fr.tuto.com/blog/2020/10/github.htm",
   },
-  {
-    title: "GitLab",
-    icon: "fa-brands:gitlab",
-    url: "https://docs.gitlab.com/ee/user/project/pages/",
-  },
+
 ];
 ---
 
-<ContentSection title="Compatibility" id="compatibility">
+<ContentSection title="Stack" id="stack">
   <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>.
+    Voici une liste liste des <span class="text-primary">technologies</span> et des <span class="text-primary">outils</span> que je <span class="text-primary">maitrise</span>.
   </Fragment>
   <CompatibilityList
     items={frameworks}
-    title="Frameworks"
+    title="technologies"
     url="https://docs.astro.build/core-concepts/framework-components/"
   />
   <CompatibilityList
     items={platforms}
-    title="Platforms"
+    title="Outils"
     url="https://docs.astro.build/guides/deploy/"
   />
 </ContentSection>

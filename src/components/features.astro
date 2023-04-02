@@ -2,65 +2,38 @@
 import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
 import type { FeatureItem } from "~/types";
-
-const features: Array<FeatureItem> = [
-  {
-    title: "Bring Your Own Framework",
-    description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "mdi:handshake",
-  },
-  {
-    title: "100% Static HTML, No JS",
-    description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "mdi:feather",
-  },
-  {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page. If the user never sees it, they never load it.",
-    icon: "mdi:directions-fork",
-  },
-  {
-    title: "Broad Integration",
-    description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any of your favorite npm packages.",
-    icon: "mdi:graph",
-  },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication.",
-    icon: "mdi:search-web",
-  },
-  {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "mdi:account-group",
-  },
-];
+import profil from "~/assets/profil.jpg"
+import astronautImage from "~/assets/astronaut.png";
+import { Picture } from "@astrojs/image/components";
+const widths = [450, 800];
+const sizes = "(min-width: 300px) 22vw, 47vw";
 ---
 
-<ContentSection title="Features" id="features">
+<ContentSection title="A propos de moi" id="about">
   <Fragment slot="lead">
-    Astro comes <span class="text-primary">batteries included</span>. It takes
-    the best parts of
-    <span class="text-primary">state-of-the-art</span>
-    tools and adds its own <span class="text-primary">innovations</span>.
+    Une<span class="text-primary"> personne </span> qui est tombée<span class="text-primary"> amoureuse </span>
+    du <span class="text-primary"> développement</span>.
   </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    {
-      features.map(({ title, description, icon }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
-          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} />
-          </div>
-          <p class="text-center font-extrabold text-xl">{title}</p>
-          <p class="text-center text-offset text-sm">{description}</p>
-        </li>
-      ))
-    }
-  </ul>
+   <Picture
+        class="object-cover w-full h-full rounded-full border-4 border-indigo-500"
+        src={profil}
+        sizes={sizes}
+        widths={widths}
+        loading="eager"
+        alt="A floating astronaut in a space suit"
+      />
+      <div class="max-w-6xl">
+        <p class="font-normal tracking-wide"> 
+         Je m'appelle <span class="text-primary">El Hadji</span> et je suis un <span class="text-primary">passionné</span> de <span class="text-primary">développement</span> de solutions 
+         <span class="text-primary">digitales</span>. Actuellement en <span class="text-primary">3ème année</span> d'études supérieures, je me spécialise dans la création d'applications <span class="text-primary">innovantes</span> pour améliorer la vie quotidienne des utilisateurs.
+
+          Après avoir passé deux ans en école d'ingénieurs en génie électrique, j'ai décidé de poursuivre ma passion pour le <span class="text-primary">développement</span> en changeant de formation. 
+          Ce choix a été un véritable <span class="text-primary">challenge</span> pour moi, mais il m'a permis de découvrir de nouveaux horizons et de me <span class="text-primary">perfectionner</span> dans le domaine du développement d'applications.
+
+          Je suis un développeur <span class="text-primary">curieux</span> et <span class="text-primary">passionné</span> qui aime relever des défis <span class="text-primary">techniques</span> . 
+          J'adore <span class="text-primary">apprendre</span> de nouvelles technologies et de nouveaux <span class="text-primary">langages</span> de programmation pour améliorer mes compétences et mes connaissances. Mon objectif est de travailler sur des <span class="text-primary">projets</span> stimulants et innovants, qui me permettront de mettre en pratique mes compétences techniques et de développer mes capacités créatives.
+
+          Si vous cherchez un développeur <span class="text-primary">talentueux</span> et <span class="text-primary">passionné</span>, je suis à votre disposition pour discuter de vos projets et mettre mes compétences à votre <span class="text-primary">service</span>.
+        </p>
+      </div>
 </ContentSection>
